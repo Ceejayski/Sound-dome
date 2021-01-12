@@ -25,14 +25,13 @@ class ArticlesController < ApplicationController
   def create
     @article = current_user.articles.build(article_params)
 
-    respond_to do |format|
-      if @article.save
-        format.html { redirect_to @article, notice: 'Article was successfully created.' }
-        format.json { render :show, status: :created, location: @article }
-      else
-        format.html { render :new }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
+    if @article.save && @article.valid?
+      params[:category].each do |cat|
+        Categorying.create(article_id: @article.id, category_id: cat)
       end
+      redirect_to new_article_path, notice: 'article Created Successfully'
+    else
+      render 'new'
     end
   end
 
@@ -60,7 +59,6 @@ class ArticlesController < ApplicationController
     end
   end
 
-  
   private
 
   # Use callbacks to share common setup or constraints between actions.

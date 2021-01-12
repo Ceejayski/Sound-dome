@@ -18,6 +18,12 @@
     <%= form.label :body %> <br />
     <%= form.text_field :body %>
   </div>
+  <% priority_categories().each do |category| %>
+    <div class="field">
+      <%= label_tag "#{category.name}" %>
+      <%= check_box_tag "category[]", category.id %>
+    </div>
+  <% end %>
 
   <div class="actions">
     <%= form.submit %>
