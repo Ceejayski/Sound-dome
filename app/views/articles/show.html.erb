@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<% if article_owner? %>    
+  <%= link_to 'Edit', edit_article_path(@article) %> |
+<% end %>
+
+<%= link_to 'Back', articles_path %>
