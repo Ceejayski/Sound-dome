@@ -3,7 +3,13 @@
 <h1>Articles</h1>
 
 <p>
+  
+  <% if @articles.empty? %>
+    <p> no Articles <p>
+  <% else %>  
   <%= best_article.title %>
+  <% end %>
+  
 <p>
 
 <br>
