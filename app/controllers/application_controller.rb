@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
-  helper_method :priority_categories
+  helper_method :priority_categories, :already_liked?
 
   protected
 
@@ -10,5 +10,10 @@ class ApplicationController < ActionController::Base
 
   def priority_categories(limit = nil)
     Category.high_priority(limit)
+  end
+
+  def already_voted?
+    Vote.where(user_id: current_user.id, article_id:
+    params[:article_id]).exists?
   end
 end
