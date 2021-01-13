@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
-  helper_method :priority_categories, :already_liked?
+  helper_method :priority_categories, :already_liked?, :best_article
 
   protected
 
@@ -15,5 +15,9 @@ class ApplicationController < ActionController::Base
   def already_voted?
     Vote.where(user_id: current_user.id, article_id:
     params[:article_id]).exists?
+  end
+
+  def best_article
+    Article.most_vote
   end
 end

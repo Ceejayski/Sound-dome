@@ -6,6 +6,7 @@ class VotesController < ApplicationController
       flash[:notice] = "You can't vote more than once"
     else
       @article.votes.create(user_id: current_user.id)
+      @article.increment!(:vote_count)
     end
     redirect_to article_path(@article)
   end

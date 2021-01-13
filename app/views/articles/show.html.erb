@@ -1,6 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<% if article_owner? %>    
+<h1><%= @article.title %></h1>
+<p><%= @article.body %></p>
+<p>Posted by: <%= @article.user.username %></p>
+<p>
+  Tags:
+  <% @article.categories.each do |tag| %>
+    <%= link_to tag.name, category_path(tag) %>
+  <% end %>
+</p>
+<% if !(current_user.nil?) && article_owner? %>    
   <%= link_to 'Edit', edit_article_path(@article) %> |
 <% end %>
 <p><%= @article.votes.count %> <%= (@article.votes.count) == 1 ? 'vote' : 'votes'%></p>
