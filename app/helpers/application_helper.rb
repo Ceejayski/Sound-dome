@@ -41,7 +41,7 @@ module ApplicationHelper
   def nav_item
     links = []
     if user_signed_in?
-      links << (active_link_to(current_user.username.upcase, edit_user_registration_path, class: 'nav-link'))
+      links << (active_link_to current_user.username.upcase, edit_user_registration_path, class: 'nav-link')
       links << (active_link_to 'Sign out'.upcase, destroy_user_session_path, class: 'nav-link', method: :delete)
       links << (active_link_to 'New article'.upcase, new_article_path, class: 'nav-link')
     else
