@@ -9,7 +9,7 @@ module ApplicationHelper
 
   def image_render(article)
     if defined? article.pic
-      image_tag(article.pic, class: 'card-img card-img-top w-100 h-100 border-rad-0')
+      image_tag(cloudinary_url(article.pic.key), class: 'card-img card-img-top w-100 h-100 border-rad-0')
     else
       image_tag('default.jpg', class: 'h-100 w-100 border')
     end
