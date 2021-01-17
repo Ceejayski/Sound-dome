@@ -1,6 +1,6 @@
 class Article < ApplicationRecord
   validates :title, presence: true, length: { minimum: 2 }
-  validates :title, length: { maximum: 30 }
+  validates :title, length: { maximum: 70 }
   validates :body, presence: true, length: { minimum: 10 }
   validate :acceptable_image_type?
   belongs_to :user
