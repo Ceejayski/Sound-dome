@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
-  helper_method :priority_categories, :already_liked?, :best_article
+  helper_method :priority_categories, :already_liked?, :best_article, :new_article_category
 
   protected
 
@@ -19,5 +19,9 @@ class ApplicationController < ActionController::Base
 
   def best_article
     Article.most_vote
+  end
+
+  def new_article_category(category)
+    Category.most_recent(category)
   end
 end

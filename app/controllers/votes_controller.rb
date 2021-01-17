@@ -2,7 +2,9 @@ class VotesController < ApplicationController
   before_action :find_article
   before_action :find_vote, only: [:destroy]
   def create
-    if already_voted?
+    if current_user.nil?
+      flash[:alert] = 'login to vote'
+    elsif already_voted?
       flash[:notice] = "You can't vote more than once"
     else
       @article.votes.create(user_id: current_user.id)

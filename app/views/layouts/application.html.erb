@@ -5,15 +5,20 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/5036f34c07.js" crossorigin="anonymous"></script>
   </head>
 
-  <body>
-    <%= render  'layouts/nav' %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+  <body class="m-2" >
+    <main class="container-xl mx-auto text-dark">
+      <%= render  'layouts/nav' %>
+      <section class="main-container">
+        <div class="notice p-0 border-0"><p class="p-0 ml-3"> <%= notice %> </p></div>
+        <div class="alert p-0 border-0"><p class="p-0 ml-3"> <%= alert %> </p></div>
+        <%= yield %>
+      </section>
+    </main>
+    <%= render  'layouts/footer' %>
   </body>
 </html>
