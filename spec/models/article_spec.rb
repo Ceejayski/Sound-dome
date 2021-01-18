@@ -35,7 +35,9 @@ RSpec.describe Article, type: :model do
 
   describe 'Attachment' do
     it 'is valid  ' do
-      subject.pic.attach(io: File.open(fixture_path + '/dummy_image.jpg'), filename: 'attachment.jpg', content_type: 'image/jpg')
+      subject.pic.attach(io: File.open("#{fixture_path}/dummy_image.jpg"),
+                         filename: 'attachment.jpg',
+                         content_type: 'image/jpg')
       expect(subject.pic).to be_attached
     end
     it 'is not att ' do
