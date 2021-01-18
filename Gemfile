@@ -48,6 +48,9 @@ group :development do
   gem 'guard', '~> 2.16', '>= 2.16.2'
   gem 'guard-livereload', '~> 2.5'
   gem 'spring'
+  gem 'xmpp4r', '~> 0.5.6'
+  gem 'growl', '~> 1.0', '>= 1.0.3'
+
 end
 
 group :test do
@@ -62,4 +65,5 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Helps with authentication session in rails
 gem 'active_link_to'
+gem 'bullet', group: 'development'
 gem 'devise'

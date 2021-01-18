@@ -9,7 +9,9 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1
   # GET /categories/1.json
-  def show; end
+  def show 
+    @category_articles = @category.articles.includes(pic_attachment: :blob)
+  end
 
   # GET /categories/new
   def new
