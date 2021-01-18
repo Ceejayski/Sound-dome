@@ -20,7 +20,7 @@
 </div>
 
 <div class="d-flex justify-content-between text-white">
-  <% priority_categories(4).each do |cat| %>
+  <% priority_categories(5).each do |cat| %>
       <div class="category border-rad-0 card border-0  overflow-hidden  w-25 " id='<%= cat.name %>'>
         <%= link_to category_path(cat), class:"h-100 position-relative"  do %>
           <%= image_render new_article_category cat %>
