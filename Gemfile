@@ -45,12 +45,11 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'better_errors', '~> 2.9', '>= 2.9.1'
   gem 'binding_of_caller'
+  gem 'growl', '~> 1.0', '>= 1.0.3'
   gem 'guard', '~> 2.16', '>= 2.16.2'
   gem 'guard-livereload', '~> 2.5'
   gem 'spring'
   gem 'xmpp4r', '~> 0.5.6'
-  gem 'growl', '~> 1.0', '>= 1.0.3'
-
 end
 
 group :test do

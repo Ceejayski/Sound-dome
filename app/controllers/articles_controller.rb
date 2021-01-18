@@ -27,8 +27,12 @@ class ArticlesController < ApplicationController
     @article = current_user.articles.build(article_params)
 
     if @article.save && @article.valid?
-      params[:category].each do |cat|
-        Categorying.create(article_id: @article.id, category_id: cat)
+      if params[:category].nil?
+        Categorying.create(article_id: @article.id, category_id: 5)
+      else
+        params[:category].each do |cid|
+          Categorying.create(article_id: @article.id, category_id: cid)
+        end
       end
       redirect_to new_article_path, notice: 'article Created Successfully'
     else

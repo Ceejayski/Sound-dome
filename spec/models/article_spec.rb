@@ -22,6 +22,25 @@ RSpec.describe Article, type: :model do
       expect(subject).not_to be_valid
     end
     it { is_expected.to validate_presence_of(:title) }
+    it 'is not valid without a title' do
+      article = Article.new(title: nil)
+      expect(article).to_not be_valid
+    end
     it { is_expected.to validate_presence_of(:body) }
+    it 'is not valid without a body' do
+      article = Article.new(body: nil)
+      expect(article).to_not be_valid
+    end
+  end
+
+  describe 'Attachment' do
+    it 'is valid  ' do
+      subject.pic.attach(io: File.open(fixture_path + '/dummy_image.jpg'), filename: 'attachment.jpg', content_type: 'image/jpg')
+      expect(subject.pic).to be_attached
+    end
+    it 'is not att ' do
+      article = Article.new(pic: nil)
+      expect(article.pic).to_not be_attached
+    end
   end
 end
