@@ -17,10 +17,6 @@ class ApplicationController < ActionController::Base
     params[:article_id]).exists?
   end
 
-  def best_article
-    Article.most_vote
-  end
-
   def new_article_category(category)
     Category.most_recent(category)
   end

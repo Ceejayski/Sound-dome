@@ -30,7 +30,7 @@ module ApplicationHelper
   end
 
   def vote_btn(article)
-    pre_vote = article.votes.find { |vote| vote.user_id == current_user.id }
+    (pre_vote = article.votes.find { |vote| vote.user_id == current_user.id }) if user_signed_in?
     if pre_vote
       (button_to 'Unvote', article_vote_path(article, pre_vote), method: :delete, class: 'btn btn-danger btn-sm')
     else

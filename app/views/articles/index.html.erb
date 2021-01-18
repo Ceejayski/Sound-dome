@@ -7,13 +7,13 @@
   <% if @articles.empty? %>
     <p> no Articles <p>
   <% else %>
-    <%= link_to  article_path(best_article.id) do %>  
+    <%= link_to  article_path(@best_article.id) do %>  
       <div class="best-article">
-        <%= image_render best_article%>
+        <%= image_render @best_article%>
       </div>
       <div class="position-absolute top-article-text">
-        <h4 class="title"><%= best_article.title %></h4>
-        <p class="body text-white"><%= best_article.body %></p>
+        <h4 class="title"><%= @best_article.title %></h4>
+        <p class="body text-white"><%= @best_article.body %></p>
       </div>
     <% end %>
   <% end %>
