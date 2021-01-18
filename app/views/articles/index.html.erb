@@ -1,0 +1,32 @@
+<div id="notice"><%= notice %></div>
+
+
+
+<div class="position-relative top-article">
+  
+  <% if @articles.empty? %>
+    <p> no Articles <p>
+  <% else %>
+    <%= link_to  article_path(@best_article.id) do %>  
+      <div class="best-article">
+        <%= image_render @best_article%>
+      </div>
+      <div class="position-absolute top-article-text">
+        <h4 class="title"><%= @best_article.title %></h4>
+        <p class="body text-white"><%= @best_article.body %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="d-flex justify-content-between text-white">
+  <% priority_categories(5).each do |cat| %>
+      <div class="category border-rad-0 card border-0  overflow-hidden  w-25 " id='<%= cat.name %>'>
+        <%= link_to category_path(cat), class:"h-100 position-relative"  do %>
+          <%= image_render new_article_category cat %>
+          <h5 class="font-weight-bolder border-bt cat-name position-absolute"><%= cat.name%></h5>
+          <h6 class="text-wrap cat-article position-absolute"><%= extract_title new_article_category cat%></h6> 
+        <% end %>
+      </div>
+  <% end %>
+</div>

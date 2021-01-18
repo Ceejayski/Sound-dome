@@ -1,0 +1,206 @@
+@import "color";
+
+nav {
+  padding: 5px 1%;
+  background-color: #fff;
+  color: #000;
+}
+
+main {
+  .main-container {
+    min-height: 78vh;
+    margin-top: -12px;
+    background-color: #fff;
+  }
+}
+
+.alert {
+  color: #fff;
+  background-color: #dc3545;
+
+  p {
+    line-height: 50px;
+  }
+}
+
+a {
+  color: inherit;
+}
+
+.notice {
+  color: #fff;
+  background-color: #28a745;
+
+  p {
+    line-height: 50px;
+  }
+}
+
+#notice {
+  display: none;
+}
+
+#alert {
+  display: none;
+}
+
+a.active {
+  color: $main_1;
+}
+
+a.active:hover {
+  color: #f39154;
+}
+
+.nav-link {
+  font-size: 0.9em !important;
+}
+
+.nav-link:hover {
+  color: rgb(141, 141, 141);
+}
+
+.navbar-brand {
+  width: 150px;
+}
+
+.top-article {
+  height: 60vh;
+
+  .best-article {
+    height: 100%;
+    width: 100%;
+
+    img {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .top-article-text {
+    bottom: 2%;
+    left: 2%;
+
+    .title {
+      color: $main_1;
+      width: 80vw;
+      height: 30px;
+    }
+
+    .body {
+      font-size: 0.9em;
+      width: 80vw;
+      height: 1.1em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.category {
+  height: 30vh;
+}
+
+.card-img {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.border-rad-0 {
+  border-radius: 0 !important;
+}
+
+.cat-name {
+  top: 4%;
+  left: 4%;
+}
+
+.cat-article {
+  bottom: 4%;
+  left: 4%;
+}
+
+.border-bt {
+  border-bottom: 3px solid $main_2 !important;
+  padding-bottom: 3px;
+}
+
+footer {
+  a {
+    color: $main_1;
+  }
+
+  i {
+    background-color: $main_1;
+    color: $main_3;
+    border-radius: 50%;
+    font-size: 20px !important;
+    padding: 8px 10px;
+  }
+
+  .fa-facebook {
+    padding: 8px 13px !important;
+  }
+}
+
+.float-left {
+  float: left;
+}
+
+.article-card {
+  height: 20rem;
+
+  .articl-card-header {
+    color: $main_2;
+    display: inline;
+  }
+
+  .article-link {
+    bottom: 2%;
+    right: 5%;
+    color: $main_2;
+  }
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.w-70 {
+  width: 70%;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.article-page-image {
+  width: 60%;
+}
+
+.fs-3 {
+  font-size: 1.2rem;
+}
+
+.form {
+  min-height: 78vh;
+}
+
+.checkbox {
+  label {
+    margin-right: 1em;
+    margin-left: 0.5em;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1349px) {
+  .container-xl {
+    max-width: 98%;
+  }
+}
+
+@media (min-width: 1350px) {
+  .container-xl {
+    max-width: 1340px;
+  }
+}

@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<div class="d-flex flex-wrap ">
+  <% @category_articles.each do |article|%>
+    
+    <div class="w-50"> 
+        <div class="d-flex justify-content-between article-card">
+          <div class="w-50">
+            <%= image_render article%>
+          </div>
+          <div class="w-50 p-3 bg-light text-dark position-relative">
+            <h6 class="articl-card-header font-weight-bold"><span class="border-bt"><%= @category.name%></span></h6>
+            <h6 class="font-weight-bold mt-3"><%= extract_title article%></h6>
+            <p class="text-break h-50 overflow-hidden"><%= extract_body article%></p>
+            <p class="position-absolute article-link"><%= link_to 'Read more', article_path(article.id)%></p>
+          </div>
+
+        </div>
+    </div>
+    
+  <% end %>
+</div>
